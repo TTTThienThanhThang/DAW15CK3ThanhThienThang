@@ -1,0 +1,29 @@
+a:hover{
+    text-decoration: none;
+    color: lightgrey;
+}
+#abc{
+    color: black;
+
+}
+#mauface{
+    color: #4267B2;
+}
+#mauyoutube{
+    color: #FF0000;
+}
+#mautw{
+    color: #36B6D9;
+}
+#mauem{
+    color: #DD5144;
+}
+.chutoty{
+    font-size: 12pt;
+}
+.giatien{
+    color: red;
+}
+.thoigianconlai{
+    color: blue;
+}
