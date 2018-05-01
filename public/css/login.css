@@ -1,0 +1,24 @@
+.header{
+    font-weight: bold;
+    font-size: 20pt;
+    text-align: center;
+    margin-bottom: 20px;
+}
+a:hover{
+    text-decoration: none;
+}
+.mauden{
+    color: black;
+}
+body{
+    background-color: blanchedalmond;
+}
+.cangiuacuamail{
+    margin-top: 10px;
+    widows: 100px;
+    height: 30px;
+    text-align: center;
+}
+.checkbox{
+    -webkit-appearance: none;
+}
