@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2018-04-30 10:58:51
+Date: 2018-05-03 19:28:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,10 +20,10 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `cthd`;
 CREATE TABLE `cthd` (
-  `MaHD` int(255) NOT NULL,
-  `IDSP` int(255) NOT NULL,
-  `Soluong` int(255) DEFAULT NULL,
-  `GiaDau` int(255) DEFAULT NULL,
+  `MaHD` int(11) NOT NULL,
+  `IDSP` int(11) NOT NULL,
+  `Soluong` int(11) DEFAULT NULL,
+  `GiaDau` int(11) DEFAULT NULL,
   PRIMARY KEY (`MaHD`,`IDSP`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -40,19 +40,20 @@ INSERT INTO `cthd` VALUES ('2', '2', '1', '70000');
 -- ----------------------------
 DROP TABLE IF EXISTS `hd`;
 CREATE TABLE `hd` (
-  `MaHD` int(255) NOT NULL AUTO_INCREMENT,
+  `MaHD` int(11) NOT NULL AUTO_INCREMENT,
   `NgayLap` date DEFAULT NULL,
-  `TongSoLuong` int(255) DEFAULT NULL,
-  `TongGiaTri` int(255) DEFAULT NULL,
+  `TongSoLuong` int(11) DEFAULT NULL,
+  `TongGiaTri` int(11) DEFAULT NULL,
   `DaThanhToan` int(11) DEFAULT NULL,
+  `IDuser` int(11) DEFAULT NULL,
   PRIMARY KEY (`MaHD`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of hd
 -- ----------------------------
-INSERT INTO `hd` VALUES ('1', '2018-04-30', '3', '130000', '0');
-INSERT INTO `hd` VALUES ('2', '2018-04-29', '2', '190000', '1');
+INSERT INTO `hd` VALUES ('1', '2018-04-30', '3', '130000', '0', '1');
+INSERT INTO `hd` VALUES ('2', '2018-04-29', '2', '190000', '1', '2');
 
 -- ----------------------------
 -- Table structure for sanpham
