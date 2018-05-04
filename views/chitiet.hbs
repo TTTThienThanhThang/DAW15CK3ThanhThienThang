@@ -1,69 +1,55 @@
-       	<header role="header">
-            	<div class="container">
-                    	<h1>
-                        	<a href="/"><i class="fab fa-docker" id="abc"></i> Auction</a>
-                        </h1>
-                    <nav role="header-nav" class="navy">
-                        <ul>
-                            <li class="nav-active"><a href="./admin/index.html"> BOSS</a></li>
-                            <li class="nav-active"><a href="/login" title="đăng nhập">Đăng nhập</a></li>
-                            <li><a href="/daugiacuatui" title="About">Đấu giá của tui </a></li>  
-                            <li><a href="/thongtinuser">Thông tin cá nhân</a></li>                              
-                            <li><a href="/doimatkhau">Đổi mật khẩu</a></li>
-                            <li><a href="/thoat">Thoát</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-        <main role="main-inner-wrapper" class="container">
-                	<div class="work-details">
-                        <div class="row">
-                        	<div class="col-xs-12 col-sm-12 col-md-4">
-                            	<header role="work-title">
-                                	<h2>Tên sản phẩm </h2>
-                                    <div class="chutoty">Giá hiện tại: <span class="giatien">4K</span></div>
-                                    <div class="chutoty">Thời gian kết thúc: <span class="thoigianconlai">00:10:00</span></div>
-                                    <div class="chutoty">Giá bạn đặt: <input type="text" name="giadat" id="giatdat" size="100"></div><br>
-                                    <button type="button" name="btnDaugia" class="btn btn-success">Đấu giá <span class="glyphicon glyphicon-ok"></span></button>
-                                </header>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-8">
-                            	<section>
-                                	<h4><b> Thông tin sản phẩm. </b></h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur a minus iusto labore doloribus facere saepe voluptate. Quaerat voluptatibus, possimus et vitae vel officiis at iste minus harum?</p>
-                                    <p><strong>Loại</strong><br/>
-                                        Gia dụng, trang sức,...
-									</p>
-                                </section>                           
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>              
-                        <div class="work-images grid">
-                            <ul class="grid-lod effect-2" id="grid">
-                                <li><img src="images/work/works-image-1.jpg" alt="" class="img-responsive"/></li>
-                                <li><img src="images/work/works-image-2.jpg" alt="" class="img-responsive"/></li>
-                                <li><img src="images/work/works-image-3.jpg" alt="" class="img-responsive"/></li>
-                            </ul>
-                        </div>
+{{> header}}
+<main role="main-inner-wrapper" class="container">
+    <div class="work-details">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <header role="work-title">
+                    <h2>Tên sản phẩm </h2>
+                    <div class="chutoty">Giá hiện tại:
+                        <span class="giatien">4K</span>
                     </div>
-        </main>
- <footer role="footer">
-                <h1>
-                    <a href="/" title="avana LLC" style="color:rgb(117, 207, 219)">AUCTION</a>
-                </h1>
-            <nav role="footer-nav" style="">
-            	<ul>
-                	<li><a href="/" title="Work">Work</a></li>
-                    <li><a href="#" title="About">About</a></li>
-                    <li><a href="#" title="Blog">Blog</a></li>
-                    <li><a href="#" title="Contact">Contact</a></li>
-                </ul>
-            </nav>
-            <ul role="social-icons">
-            	<li><a href="#"><i class="fab fa-twitter" aria-hidden="true" id="mautw"></i></a></li>
-                <li><a href="#" ><i class="fab fa-facebook-square" id="mauface" aria-hidden="true" ></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube" aria-hidden="true" id="mauyoutube"></i></a></li>
-                <li><a href="#"><i class="far fa-envelope" aria-hidden="true" id="mauem"></i></a></li>
+                    <div class="chutoty">Thời gian kết thúc:
+                        <span class="thoigianconlai">00:10:00</span>
+                    </div>
+                    <div class="chutoty">Giá bạn đặt:
+                        <input type="text" name="giadat" id="giatdat" size="100">
+                    </div>
+                    <br>
+                    <button type="button" name="btnDaugia" class="btn btn-success">Đấu giá
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                </header>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8">
+                <section>
+                    <h4>
+                        <b> Thông tin sản phẩm. </b>
+                    </h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo pariatur a minus iusto labore
+                        doloribus facere saepe voluptate. Quaerat voluptatibus, possimus et vitae vel officiis at iste minus
+                        harum?
+                    </p>
+                    <p>
+                        <strong>Loại</strong>
+                        <br/> Gia dụng, trang sức,...
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="work-images grid">
+            <ul class="grid-lod effect-2" id="grid">
+                <li>
+                    <img src="images/work/works-image-1.jpg" alt="" class="img-responsive" />
+                </li>
+                <li>
+                    <img src="images/work/works-image-2.jpg" alt="" class="img-responsive" />
+                </li>
+                <li>
+                    <img src="images/work/works-image-3.jpg" alt="" class="img-responsive" />
+                </li>
             </ul>
-            <p class="copy-right">&copy; 2015  avana LLC.. All rights Resved</p>
-        </footer>
+        </div>
+    </div>
+</main>
+{{> footer}}
