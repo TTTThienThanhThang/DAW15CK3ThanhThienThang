@@ -16,8 +16,8 @@ const thongtinuser = require('./routes/thongtinuser')
 var app = express();
 
 //Handlebars
-const hbs = require('hbs');
-hbs.registerPartials(__dirname + '/views/partials');
+// const hbs = require('hbs');
+// hbs.registerPartials(__dirname + '/views/partials');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
