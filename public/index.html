@@ -20,38 +20,37 @@
         crossorigin="anonymous">
 </head>
 
-<body>
+<body id="root">
     <header role="header">
         <div class="container">
             <h1>
-                <a href="index.html">
-                    <i class="fab fa-docker" id="ici1"></i> Auction</a>
+                <div onclick="VeHome();">
+                    <i class="fab fa-docker" id="ici1"></i> Auction</div>
             </h1>
-            <nav role="header-nav" class="navy">
+            <div onclick="HienThiDangNhap();" class="dn">Đăng nhập</div>
+            <nav role="header-nav" class="navy navcus">
                 <ul>
                     <li class="nav-active">
-                        <a href="./admin/index.html"> BOSS</a>
-                    </li>
-                    <li class="nav-active">
-                        <a href="login.html" title="đăng nhập">Đăng nhập</a>
+                        <div class="boss">Boss</div>
                     </li>
                     <li>
-                        <a href="daugiacuatui.html" title="About">Đấu giá của tui </a>
+                        <div onclick="HienThiDauGiaCuaTui();" class="dgct">Đấu giá của tui</div>
                     </li>
                     <li>
-                        <a href="thongtinuser.html">Thông tin cá nhân</a>
+                        <div onclick="HienThiThongTinCaNhan();" class="ttcn">Thông tin cá nhân</div>
                     </li>
                     <li>
-                        <a href="doimatkhau.html">Đổi mật khẩu</a>
+                        <div onclick="HienThiDoiMatKhau();" class="dmk">Đổi mật khẩu</div>
                     </li>
                     <li>
-                        <a href="thoat.html">Thoát</a>
+                        <div onclick="Thoat();" class="thoat">Thoát</div>
                     </li>
                 </ul>
             </nav>
+            <div id="DangNhap"></div>
         </div>
-        <div class="container" style="margin-top:10px">
-            <div class="row">
+        <div class="container anchodgct" style="margin-top:10px">
+            <div class="row ansearch">
                 <form role="search">
                     <div class="form-group col-sm-6 col-md-offset-3">
                         <input type="text" class="form-control" placeholder="Search">
@@ -63,7 +62,7 @@
             </div>
         </div>
     </header>
-    <main role="main-home-wrapper" class="container">
+    <main role="main-home-wrapper" class="container trangdaugiacuatui">
         <div class="row">
             <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
                 <article role="pge-title-content">
@@ -117,33 +116,10 @@
                     </li>
                 </ul>
             </section>
-            <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
-                <ul class="grid-lod effect-2" id="grid">
-                    <li>
-                        <figure class="effect-oscar">
-                            <img src="images/home-images/image-3.jpg" alt="" class="img-responsive" />
-                            <figcaption>
-                                <h3>Sản phẩm
-                                    <span> 1 </span>
-                                </h3>
-                                <h3>Thời gian còn lại:
-                                    <span class="thoigianconlai"> 0:10:00</span>
-                                </h3>
-                                <p>Thông tin cơ bản sản phẩm 1</p>
-                                <p>Giá hiện tại:
-                                    <span class="giatien">4K</span>
-                                </p>
-                                <p>Click để đấu giá</p>
-                                <a href="chitietdaugia.html">View more</a>
-                            </figcaption>
-                        </figure>
-                    </li>
-                </ul>
-            </section>
             <div class="clearfix"></div>
         </div>
     </main>
-    <footer role="footer">
+    <footer role="footer" class="">
         <h1>
             <a href="index.html" title="avana LLC" style="color:rgb(117, 207, 219)">AUCTION</a>
         </h1>
@@ -194,6 +170,10 @@
     <script src="js/effects/AnimOnScroll.js" type="text/javascript"></script>
     <script src="js/effects/modernizr.custom.js"></script>
     <script src="js/html5shiv.js" type="text/javascript"></script>
+    <script src="https://github.com/kswedberg/jquery-smooth-scroll/blob/master/jquery.smooth-scroll.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+    </script>
 </body>
 
 </html>

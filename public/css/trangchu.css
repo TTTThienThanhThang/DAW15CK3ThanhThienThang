@@ -1,24 +1,40 @@
-#ici1{
-    color: black;   
+#ici1 {
+    color: black;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
 }
-.giatien{
+
+.giatien {
     color: red;
 }
-.thoigianconlai{
+
+.thoigianconlai {
     color: blue;
 }
-#mauface{
+
+#mauface {
     color: #4267B2;
 }
-#mauyoutube{
+
+#mauyoutube {
     color: #FF0000;
 }
-#mautw{
+
+#mautw {
     color: #36B6D9;
 }
-#mauem{
+
+#mauem {
     color: #DD5144;
+}
+
+.dn {
+    float: right;
+    font-size: 16pt;
+}
+
+.dk {
+    color: #36B6D9;
 }
