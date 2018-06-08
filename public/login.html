@@ -3,15 +3,15 @@
         <div class="login-panel panel panel-default">
             <div class="panel-heading">Log in</div>
             <div class="panel-body">
-                <form role="form">
+                <form role="form" name="flogin">
                     <fieldset>
                         <div class="form-group">
-                            <input class="form-control" placeholder="Username" name="ipUSERNAME" type="text" autofocus="">
+                            <input class="form-control" placeholder="Username" name="ipUSERNAME" id="ipUSERNAME" type="text" autofocus="">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                            <input class="form-control" placeholder="Password" name="ipPassword" id="ipPassword" type="password" value="">
                         </div>
-                        <a class="btn btn-primary">Đăng nhập</a>
+                        <a class="btn btn-primary" onclick="KiemTraDangNhap();">Đăng nhập</a>
                         <span>Chưa có tài khoản
                             <span class="dk" onclick="HienThiDangKi();">Đăng kí</span>
                         </span>
