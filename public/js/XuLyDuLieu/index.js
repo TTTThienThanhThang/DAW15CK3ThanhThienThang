@@ -1,11 +1,26 @@
 $(document).ready(function () {
     $(window).on("load", function () {
-        $('.dmk').hide();
-        $('.ttcn').hide();
-        $('.dgct').hide();
-        $('.thoat').hide();
-        $('#trangcuaboss').hide();
-        $('.navcus').hide();
+        if (sessionStorage.DangNhap == null) {
+            $('.dmk').hide();
+            $('.ttcn').hide();
+            $('.dgct').hide();
+            $('.thoat').hide();
+            $('#trangcuaboss').hide();
+            $('.navcus').hide();
+        } else {
+            const temp = JSON.parse(sessionStorage.DangNhap);
+            if (temp.MaLoaiTaiKhoan != 3) {
+                $("#trangcuaboss").hide();
+                $('#TenHienThi').text(temp.TenHienThi);
+            }
+            if (temp.MaLoaiTaiKhoan == 3) {
+                $('#trangcuaboss').show();
+                $('.dmk').hide();
+                $('.ttcn').hide();
+                $('.dgct').hide();
+            }
+            $('.dn').hide();
+        }
         $("#allitem").empty();
         $.ajax({
             type: "GET",

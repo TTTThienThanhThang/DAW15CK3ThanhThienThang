@@ -17,9 +17,11 @@ function KiemTraDangNhap() {
             if (kqua == 0) {
                 alert("Dang nhap that bai");
             } else {
-                localStorage.setItem("PhienDangNhap", JSON.stringify(kqua[0]));
-                const temp = JSON.parse(localStorage.PhienDangNhap)
-                // console.log(temp.MaLoaiTaiKhoan);
+                // localStorage.setItem("PhienDangNhap", JSON.stringify(kqua[0]));
+                // const temp = JSON.parse(localStorage.PhienDangNhap)
+                sessionStorage.DangNhap = JSON.stringify(kqua[0]);
+                const temp = JSON.parse(sessionStorage.DangNhap);
+                console.log(sessionStorage.DangNhap);
                 $('.navcus').show();
                 $('.dn').hide();
                 $('#DangNhap').empty();
@@ -32,6 +34,7 @@ function KiemTraDangNhap() {
                     $('#TenHienThi').text(temp.TenHienThi);
                 } else {
                     $('#trangcuaboss').show();
+                    $('.thoat').show();
                 }
             }
         }
