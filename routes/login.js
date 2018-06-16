@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     conn.getConnection((err, connection) => {
         if (err)
             throw err;
-        var sql = "SELECT * from taikhoan t where t.TenDangNhap='" + user + "' and t.MatKhau = '" + pass + "'";
+        var sql = "SELECT * from taikhoan t join loaitaikhoan l on t.MaLoaiTaiKhoan = l.MaLoaiTaiKhoan where t.TenDangNhap='" + user + "' and t.MatKhau = '" + pass + "'";
         connection.query(sql, (err, result) => {
             connection.release();
             if (err) throw err;

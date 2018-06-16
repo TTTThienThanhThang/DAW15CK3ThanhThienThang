@@ -38,3 +38,7 @@ a:hover {
 .dk {
     color: #36B6D9;
 }
+
+.pointer {
+    cursor: pointer;
+}

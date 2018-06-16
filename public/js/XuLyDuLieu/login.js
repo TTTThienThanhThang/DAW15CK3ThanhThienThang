@@ -22,20 +22,7 @@ function KiemTraDangNhap() {
                 sessionStorage.DangNhap = JSON.stringify(kqua[0]);
                 const temp = JSON.parse(sessionStorage.DangNhap);
                 console.log(sessionStorage.DangNhap);
-                $('.navcus').show();
-                $('.dn').hide();
-                $('#DangNhap').empty();
-                if (temp.MaLoaiTaiKhoan != 3) {
-                    $('#trangcuaboss').hide();
-                    $('.dmk').show();
-                    $('.ttcn').show();
-                    $('.dgct').show();
-                    $('.thoat').show();
-                    $('#TenHienThi').text(temp.TenHienThi);
-                } else {
-                    $('#trangcuaboss').show();
-                    $('.thoat').show();
-                }
+                window.location.href = '../../';
             }
         }
     })

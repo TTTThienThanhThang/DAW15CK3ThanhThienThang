@@ -10,7 +10,17 @@ function HienThiDauGiaCuaTui() {
 }
 
 function HienThiThongTinCaNhan() {
+    const DangNhap = JSON.parse(sessionStorage.DangNhap);
     $('#DangNhap').load('../thongtinuser.html');
+    setTimeout(function () {
+        $('#ipTDN').val(DangNhap.TenDangNhap);
+        $('#ipHoTen').val(DangNhap.TenHienThi);
+        $('#ipEmail').val(DangNhap.Email);
+        $('#ipSDT').val(DangNhap.DienThoai);
+        $('#ipDiaChi').val(DangNhap.DiaChi);
+        $('#ipLoaiTaiKhoan').val(DangNhap.TenLoaiTaiKhoan);
+    }, 1000);
+
 }
 
 function HienThiDoiMatKhau() {
@@ -18,6 +28,16 @@ function HienThiDoiMatKhau() {
 }
 
 function HienThiDangKi() {
-    $('.dn').hide();
     $('#DangNhap').load('../dangki.html');
+}
+
+function Thoat() {
+    if (sessionStorage.DangNhap != null) {
+        sessionStorage.removeItem("DangNhap");
+        window.location.href = '../';
+    }
+}
+
+function Home() {
+    window.location.href = '../';
 }

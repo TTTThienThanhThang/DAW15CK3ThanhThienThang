@@ -27,6 +27,7 @@ function DangKi() {
         },
         success: (data) => {
             alert(data.kq);
+            window.location.href = '../../'; //về trang chủ
         }
     })
 }

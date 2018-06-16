@@ -31,6 +31,7 @@ function DoiMatKhau() {
                 alert("Doi mat khau thanh cong");
                 temp.MatKhau = mkm;
                 sessionStorage.DangNhap = JSON.stringify(temp);
+                window.location.href = '../../'; //về trang chủ
             } else {
                 alert("Doi mat khau that bai, vui long thu lai");
             }

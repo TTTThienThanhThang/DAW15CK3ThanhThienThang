@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : MySQL
+ Source Server         : QLHS
  Source Server Type    : MySQL
  Source Server Version : 50719
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 08/05/2018 21:00:31
+ Date: 16/06/2018 12:36:51
 */
 
 SET NAMES utf8mb4;
@@ -134,10 +134,10 @@ CREATE TABLE `sanpham`  (
 -- ----------------------------
 -- Records of sanpham
 -- ----------------------------
-INSERT INTO `sanpham` VALUES (1, 'Giày thể thao NEAT: Xanh', 1, 'Hãy bước đi đầy tự tin, phong cách với Giày thể thao NEAT, một sản phẩm được may từ chất liệu cao cấp, bền nhẹ, dễ dàng phối đồ và mang lại cảm giác thoải mái, dễ chịu khi vận động. Đấu giá ngay!\r\n\r\nĐặc điểm sản phẩm:\r\n\r\n- Được làm từ vải chất lượng cao, bền nhẹ\r\n- Dễ dàng phối với hầu hết các loại trang phục\r\n- Cho bạn thoải mái vận động mà vẫn mang lại cảm giác dễ chịu cho đôi chân\r\n- Kích cỡ: 39-44', NULL);
-INSERT INTO `sanpham` VALUES (2, 'Ba lô leo núi NEAT: Nâu / Xám', 2, 'Hãy thay đổi phong cách sống với dòng sản phẩm ba-lô leo núi NEAT! Chỉ một chiếc túi là đủ cho mọi đồ dùng cá nhân của bạn trong một chuyến đi! Hãy khám phá thế giới theo phong cách mới cùng món phụ kiện này. Đấu giá ngay!\r\n\r\nBa lô leo núi NEAT: Nâu / Xám\r\nĐặc điểm kỹ thuật sản phẩm :\r\n\r\n- Làm bằng vải canvas\r\n- Kích thước 26 x 13 x 47 cm\r\n- Màu sắc: Nâu/Xám', '');
-INSERT INTO `sanpham` VALUES (3, 'Đồng hồ đeo tay kỹ thuật số: Đen', 3, 'Hoàn thiện phong cách của bạn với đồng hồ đeo tay kỹ thuật số thể thao này. Được thiết kế với độ bền và tính ứng dụng cao.\r\n\r\nĐồng hồ đeo tay kỹ thuật số màu đen này có mặt số hình cầu trắng và được thiết kế đơn giản mà cuốn hút, sang trọng\r\n- Chiều rộng: 4,5 cm.\r\n\r\n- Chiều dài: 24 cm.\r\n\r\n-Chống nước', NULL);
-INSERT INTO `sanpham` VALUES (4, 'Ví nam: Đen', 4, 'Ví thiết kế thông minh giữ tiền và thẻ của bạn an toàn và có tổ chức.\r\n\r\n\r\n\r\nThông số kỹ thuật:\r\n\r\n- Nhãn hiệu: STROM\r\n- Chất liệu: PU\r\n- Khe để lưu trữ thẻ và hóa đơn\r\n- Kích thước: 11,5 x 9,5 cm', NULL);
+INSERT INTO `sanpham` VALUES (1, 'Giày thể thao NEAT: Xanh', 1, 'Hãy bước đi đầy tự tin, phong cách với Giày thể thao NEAT, một sản phẩm được may từ chất liệu cao cấp, bền nhẹ, dễ dàng phối đồ và mang lại cảm giác thoải mái, dễ chịu khi vận động. Đấu giá ngay!\r\n\r\nĐặc điểm sản phẩm:\r\n\r\n- Được làm từ vải chất lượng cao, bền nhẹ\r\n- Dễ dàng phối với hầu hết các loại trang phục\r\n- Cho bạn thoải mái vận động mà vẫn mang lại cảm giác dễ chịu cho đôi chân\r\n- Kích cỡ: 39-44', 'images/sanpham/giayneat.jpg');
+INSERT INTO `sanpham` VALUES (2, 'Ba lô leo núi NEAT: Nâu / Xám', 2, 'Hãy thay đổi phong cách sống, với dòng sản phẩm ba-lô leo núi NEAT! Chỉ một chiếc túi là đủ cho mọi đồ dùng cá nhân của bạn trong một chuyến đi! Hãy khám phá thế giới theo phong cách mới cùng món phụ kiện này. Đấu giá ngay!\r\n\r\nBa lô leo núi NEAT: Nâu / Xám\r\nĐặc điểm kỹ thuật sản phẩm :\r\n\r\n- Làm bằng vải canvas\r\n- Kích thước 26 x 13 x 47 cm\r\n- Màu sắc: Nâu/Xám', 'images/sanpham/baloneat.jpg');
+INSERT INTO `sanpham` VALUES (3, 'Đồng hồ đeo tay kỹ thuật số: Đen', 3, 'Hoàn thiện phong cách của bạn với đồng hồ đeo tay kỹ thuật số, thể thao này. Được thiết kế với độ bền và tính ứng dụng cao.\r\n\r\nĐồng hồ đeo tay kỹ thuật số màu đen này có mặt số hình cầu trắng và được thiết kế đơn giản mà cuốn hút, sang trọng\r\n- Chiều rộng: 4,5 cm.\r\n\r\n- Chiều dài: 24 cm.\r\n\r\n-Chống nước', 'images/sanpham/dongho.jpg');
+INSERT INTO `sanpham` VALUES (4, 'Ví nam: Đen', 4, 'Ví thiết kế thông minh giữ tiền và thẻ của bạn, an toàn và có tổ chức.\r\n\r\n\r\n\r\nThông số kỹ thuật:\r\n\r\n- Nhãn hiệu: STROM\r\n- Chất liệu: PU\r\n- Khe để lưu trữ thẻ và hóa đơn\r\n- Kích thước: 11,5 x 9,5 cm', 'images/sanpham/vinam.jpg');
 
 -- ----------------------------
 -- Table structure for taikhoan
@@ -153,7 +153,7 @@ CREATE TABLE `taikhoan`  (
   `DiaChi` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `MaLoaiTaiKhoan` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`MaTaiKoan`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of taikhoan
@@ -162,6 +162,8 @@ INSERT INTO `taikhoan` VALUES (1, 'pocnghiepthang', '123', 'pocnghiepthang', 'po
 INSERT INTO `taikhoan` VALUES (2, 'phantanthanh', '123', 'phantanthanh', 'phantanthanh@gmail.com', '028 3915 6156', '2 Hải Triều, Bến Nghé, Quận 1, Hồ Chí Minh ', 2);
 INSERT INTO `taikhoan` VALUES (3, 'doanphuongminhthien', '123', 'doanphuongminhthien', 'doanphuongminhthien@gmail.com', '028 3835 3193', '227 Đường Nguyễn Văn Cừ, Phường 4, Quận 5, Hồ Chí Minh', 2);
 INSERT INTO `taikhoan` VALUES (4, 'admin', 'admin', 'admin', '', NULL, NULL, 3);
+INSERT INTO `taikhoan` VALUES (9, 'thienminh63997', '1', 'Thiên Đoàn Minh', NULL, NULL, '', 1);
+INSERT INTO `taikhoan` VALUES (8, 'thienminh6397', '1', 'Doan Minh', 'cobonla7537@gmail.com', '01645516783', '123 THD', 1);
 
 -- ----------------------------
 -- Table structure for thamso

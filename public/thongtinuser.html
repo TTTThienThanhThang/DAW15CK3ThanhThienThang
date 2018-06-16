@@ -1,44 +1,43 @@
-<form class="form-horizontal">
+<form class="form-horizontal" name="fUser">
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Tên đăng nhập</label>
+    <label for="ipTDN" class="col-sm-2 control-label">Tên đăng nhập</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="ipTDN" value="thienminh" readonly>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="ipPW" class="col-sm-2 control-label">Mật khẩu</label>
-    <div class="col-sm-8">
-      <input type="password" class="form-control" id="ipPW" value="******">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="ipPWlaplai" class="col-sm-2 control-label">Nhập lại mật khẩu</label>
-    <div class="col-sm-8">
-      <input type="password" class="form-control" id="ipPWlaplai" value="******">
+      <input type="text" class="form-control" id="ipTDN" name="ipTDN" readonly>
     </div>
   </div>
   <div class="form-group">
     <label for="ipHoTen" class="col-sm-2 control-label">Họ tên </label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="ipHoTen" value="Thiên Minh">
+      <input type="text" class="form-control" id="ipHoTen" name="ipHoTen">*
     </div>
   </div>
   <div class="form-group">
-    <label for="ipCMND" class="col-sm-2 control-label">CMND </label>
+    <label for="ipEmail" class="col-sm-2 control-label">Email </label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="ipCMND" value="2724777777">
+      <input type="email" class="form-control" id="ipEmail" name="ipEmail">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="ipSDT" class="col-sm-2 control-label">SDT </label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="ipSDT" name="ipSDT">
     </div>
   </div>
   <div class="form-group">
     <label for="ipDiaChi" class="col-sm-2 control-label">Địa chỉ </label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="ipDiaChi" value="123 An Dương Vương, P5, Q6, TPHCM">
+    <div class="col-sm-8 inputFormUserInfo">
+      <input type="text" class="form-control" id="ipDiaChi" name="ipDiaChi">
     </div>
   </div>
   <div class="form-group">
-
+    <label for="ipLoaiTaiKhoan" class="col-sm-2 control-label">Loai Tai Khoan </label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="ipLoaiTaiKhoan" name="ipLoaiTaiKhoan" readonly>
+    </div>
+  </div>
+  <div class="form-group">
     <div class="col-sm-8 col-sm-offset-2">
-      <button type="button" class="btn btn-success">Xác nhận</button>
+      <button type="button" class="btn btn-success" onclick="ThayDoiThongTin();">Xác nhận</button>
     </div>
   </div>
 </form>
