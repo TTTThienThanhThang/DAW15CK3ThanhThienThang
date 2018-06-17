@@ -17,6 +17,96 @@ router.get('/allitem', (req, res) => {
             })
         })
     })
+})
+router.get('/giadauhientai/:msp', (req, res) => {
+    var msp = req.params.msp;
+    conn.getConnection((err, connection) => {
+        if (err) throw err;
+        var sql = "select * from phiendaugia where MaSanPham = " + msp;
+        connection.query(sql, (err, result) => {
+            connection.release();
+            if (err) throw err;
+            else {
+                res.send({
+                    'kq': result[0]
+                })
+            }
+        })
+    })
+})
+router.get("/laythamso", (req, res) => {
+    conn.getConnection((err, connection) => {
+        if (err) throw err;
+        var sql = "select * from thamso";
+        connection.query(sql, (err, result) => {
+            connection.release();
+            if (err) throw err;
+            else {
+                res.send({
+                    'kq': result
+                })
+            }
+        })
+    })
+})
 
+router.post('/themvaophieudaugia', (req, res) => {
+    var phiendaugia = req.body.phiendaugia;
+    var mataikhoan = req.body.mataikhoan;
+    var giadat = req.body.giadat;
+    conn.getConnection((err, connection) => {
+        if (err) throw err;
+        var sql = `SELECT * from phieudaugia where MaTaiKhoan = ${mataikhoan} and MaPhienDauGia = ${phiendaugia}`;
+        connection.query(sql, (err, result) => {
+            connection.release();
+            if (err) throw err;
+            else {
+                if (result.length != 0) {
+                    var maphieudaugia = result[0].MaPhieuDauGia;
+                    var sql2 = `update phieudaugia set GiaDau = ${giadat} where MaPhieuDauGia = ${maphieudaugia}`;
+                    connection.query(sql2, (err, result2) => {
+                        if (err) throw err;
+                        else {
+                            res.send({
+                                'maphieudaugia': maphieudaugia
+                            })
+                        }
+                    })
+                } else {
+                    var sql2 = `insert into phieudaugia(MaPhienDauGia,MaTaiKhoan,GiaDau,MaTinhTrangPhieuDauGia) values(${phiendaugia},${mataikhoan},${giadat},1)`;
+                    connection.query(sql2, (err, result2) => {
+                        if (err) throw err;
+                        else {
+                            var insertid = result2.insertId;
+                            res.send({
+                                'maphieudaugia': insertid
+                            })
+                        }
+                    })
+                }
+            }
+        })
+    })
+})
+router.post('/themvaophiendaugia', (req, res) => {
+    var phiendaugia = req.body.maphiendaugia;
+    var thoigiandau = req.body.thamsocong;
+    var giadat = req.body.giadat;
+    var maphieudauthang = req.body.maphieudauthang;
+    conn.getConnection((err, connection) => {
+        if (err) throw err;
+        var sql = `update phiendaugia set ThoiGianDau = ${thoigiandau}, GiaHienTai=${giadat}, MaPhieuDauThang = ${maphieudauthang},MaTinhTrangPhienDauGia=2 where MaPhienDauGia= ${phiendaugia}`;
+        connection.query(sql, (err, result3) => {
+            if (err) {
+                res.send({
+                    'kq': 'Dau gia that bai'
+                })
+            } else {
+                res.send({
+                    'kq': 'Dau gia thanh cong'
+                })
+            }
+        })
+    })
 })
 module.exports = router;

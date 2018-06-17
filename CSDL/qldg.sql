@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 16/06/2018 12:36:51
+ Date: 17/06/2018 22:20:10
 */
 
 SET NAMES utf8mb4;
@@ -31,10 +31,10 @@ CREATE TABLE `hinh`  (
 -- ----------------------------
 -- Records of hinh
 -- ----------------------------
-INSERT INTO `hinh` VALUES (1, NULL, 1);
-INSERT INTO `hinh` VALUES (2, NULL, 2);
-INSERT INTO `hinh` VALUES (3, NULL, 3);
-INSERT INTO `hinh` VALUES (4, NULL, 4);
+INSERT INTO `hinh` VALUES (1, 'images/sanpham/1', 1);
+INSERT INTO `hinh` VALUES (2, 'images/sanpham/2', 2);
+INSERT INTO `hinh` VALUES (3, 'images/sanpham/3', 3);
+INSERT INTO `hinh` VALUES (4, 'images/sanpham/4', 4);
 
 -- ----------------------------
 -- Table structure for loaisanpham
@@ -78,8 +78,8 @@ DROP TABLE IF EXISTS `phiendaugia`;
 CREATE TABLE `phiendaugia`  (
   `MaPhienDauGia` int(11) NOT NULL AUTO_INCREMENT,
   `MaSanPham` int(11) NULL DEFAULT NULL,
-  `ThoiGianBatDau` date NULL DEFAULT NULL,
-  `ThoiGianDau` time(0) NULL DEFAULT NULL,
+  `ThoiGianBatDau` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `ThoiGianDau` int(50) NULL DEFAULT NULL,
   `GiaThapNhat` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `GiaHienTai` bigint(255) NULL DEFAULT NULL,
   `MaPhieuDauThang` int(11) NULL DEFAULT NULL,
@@ -90,10 +90,10 @@ CREATE TABLE `phiendaugia`  (
 -- ----------------------------
 -- Records of phiendaugia
 -- ----------------------------
-INSERT INTO `phiendaugia` VALUES (1, 1, '2018-04-05', '19:36:46', '1', 3400000, 3, 1);
-INSERT INTO `phiendaugia` VALUES (2, 2, '2018-04-25', '08:04:25', '1', 2700000, 5, 1);
-INSERT INTO `phiendaugia` VALUES (3, 3, '2018-05-08', '20:06:08', '1', 560, NULL, 2);
-INSERT INTO `phiendaugia` VALUES (4, 4, '2018-07-01', '18:13:44', '1', 1, NULL, 3);
+INSERT INTO `phiendaugia` VALUES (1, 1, '17/06/2018 13:32:00', 500, '1', 3400000, 3, 1);
+INSERT INTO `phiendaugia` VALUES (2, 2, '17/06/2018 13:20:30', 200, '1', 2700000, 5, 1);
+INSERT INTO `phiendaugia` VALUES (3, 3, '17/06/2018 14:25:30', 3660, '1', 630, 19, 2);
+INSERT INTO `phiendaugia` VALUES (4, 4, '17/06/2018 21:59:30', 3810, '1', 90, 18, 2);
 
 -- ----------------------------
 -- Table structure for phieudaugia
@@ -106,7 +106,7 @@ CREATE TABLE `phieudaugia`  (
   `GiaDau` bigint(255) NULL DEFAULT NULL,
   `MaTinhTrangPhieuDauGia` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`MaPhieuDauGia`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Fixed;
+) ENGINE = MyISAM AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Fixed;
 
 -- ----------------------------
 -- Records of phieudaugia
@@ -117,6 +117,8 @@ INSERT INTO `phieudaugia` VALUES (3, 1, 3, 3400000, 2);
 INSERT INTO `phieudaugia` VALUES (4, 2, 1, 2, 2);
 INSERT INTO `phieudaugia` VALUES (5, 2, 2, 2700000, 2);
 INSERT INTO `phieudaugia` VALUES (6, 3, 1, 560, 1);
+INSERT INTO `phieudaugia` VALUES (18, 4, 8, 90, 1);
+INSERT INTO `phieudaugia` VALUES (19, 3, 8, 630, 1);
 
 -- ----------------------------
 -- Table structure for sanpham
@@ -174,14 +176,13 @@ CREATE TABLE `thamso`  (
   `TenThamSo` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `GiaTri` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`MaThamSo`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of thamso
 -- ----------------------------
-INSERT INTO `thamso` VALUES (1, 'A', 1);
-INSERT INTO `thamso` VALUES (2, 'B', 2);
-INSERT INTO `thamso` VALUES (3, 'C', 3);
+INSERT INTO `thamso` VALUES (1, 'BuocDau', 10);
+INSERT INTO `thamso` VALUES (2, 'ThoiGianCong', 10);
 
 -- ----------------------------
 -- Table structure for tinhtrangphiendaugia
