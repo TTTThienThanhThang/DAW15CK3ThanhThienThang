@@ -109,4 +109,33 @@ router.post('/themvaophiendaugia', (req, res) => {
         })
     })
 })
+router.get('/updatephiendau/:pdg', (req, res) => { //thuc hien update vao phien dau gia, va phieu dau gia tuong ung voi user
+    var phiendaugia = req.params.pdg;
+    conn.getConnection((err, connection) => {
+        if (err) throw err;
+        else {
+            var sql = "update phiendaugia set MaTinhTrangPhienDauGia = 1 where MaPhienDauGia = " + phiendaugia;
+            connection.query(sql, (err, result) => {
+                connection.release();
+                if (err) {
+                    res.send({
+                        'kq': 'Update that bai'
+                    })
+                }
+            })
+            var sql2 = "update phieudaugia set MaTinhTrangPhieuDauGia = 2 where MaPhienDauGia = " + phiendaugia;
+            connection.query(sql2, (err, result2) => {
+                if (err) {
+                    res.send({
+                        'kq': 'Update that bai'
+                    })
+                } else {
+                    res.send({
+                        'kq': 'update thanh cong'
+                    })
+                }
+            })
+        }
+    })
+})
 module.exports = router;

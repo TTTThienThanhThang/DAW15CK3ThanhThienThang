@@ -43,9 +43,13 @@ $(document).ready(function () {
                     url: "/giadauhientai/" + msp,
                     success: (data) => {
                         var kq = data.kq;
-                        var thoigianbatdau = kq.ThoiGianBatDau;
-                        var thoigiandau = parseInt(kq.ThoiGianDau);
-                        ChayGiay(thoigianbatdau, thoigiandau, 0);
+                        if (kq.MaTinhTrangPhienDauGia == 1) {
+                            $('.tgcl0').text("0");
+                        } else {
+                            var thoigianbatdau = kq.ThoiGianBatDau;
+                            var thoigiandau = parseInt(kq.ThoiGianDau);
+                            ChayGiay(thoigianbatdau, thoigiandau, 0, kq.MaPhienDauGia);
+                        }
                         $(".gt0").text(kq.GiaHienTai + "k")
                     }
                 })
@@ -69,9 +73,13 @@ $(document).ready(function () {
                         url: "/giadauhientai/" + msp,
                         success: (data) => {
                             var kq = data.kq;
-                            var thoigianbatdau = kq.ThoiGianBatDau;
-                            var thoigiandau = parseInt(kq.ThoiGianDau);
-                            ChayGiay(thoigianbatdau, thoigiandau, i);
+                            if (kq.MaTinhTrangPhienDauGia == 1) {
+                                $('.tgcl' + i).text("0");
+                            } else {
+                                var thoigianbatdau = kq.ThoiGianBatDau;
+                                var thoigiandau = parseInt(kq.ThoiGianDau);
+                                ChayGiay(thoigianbatdau, thoigiandau, i, kq.MaPhienDauGia);
+                            }
                             $(".gt" + i).text(kq.GiaHienTai + "k");
                         }
                     })
@@ -85,15 +93,22 @@ var XuatGiay = (i, n) => {
     $(".tgcl" + i).text(n);
 }
 
-function ChayGiay(thoigianbatdau, thoigiandau, i) {
-    var a = thoigianbatdau.split(" ");
-    var a1 = a[1].split(":");
-    var tgbd = a1[0] * 60 * 60 + a1[1] * 60 + a1[2] * 1;
-    var day = new Date();
-    var tght = day.getHours() * 60 * 60 + day.getMinutes() * 60 + day.getSeconds();
-    var count = thoigiandau - (tght - tgbd);
+function ChayGiay(thoigianbatdau, thoigiandau, i, phiendaugia) {
+    var a = thoigianbatdau.split(" "); //lay thoi gian bat dau
+    var a1 = a[1].split(":"); //cat chuoi
+    var tgbd = a1[0] * 60 * 60 + a1[1] * 60 + a1[2] * 1; //chuyen doi ve giay
+    var day = new Date(); //lay thoi gian hien tai
+    var tght = day.getHours() * 60 * 60 + day.getMinutes() * 60 + day.getSeconds(); //chuyen ve giay 
+    var count = thoigiandau - (tght - tgbd); //thoi gian dau con lai = thoi gian dau trong csdl - thoi gian troi qua
     var countdown = setInterval(function () {
-        if (count <= 0) {
+        if (count <= 0) { //neu het thoi gian dau gia
+            $.ajax({ //gui request len server de server dieu chinh tinh trang phien dau gia
+                type: "GET",
+                url: "/updatephiendau/" + phiendaugia,
+                success: (data) => {
+                    console.log(data.kq);
+                }
+            })
             clearInterval(countdown)
         }
         XuatGiay(i, count);
@@ -104,7 +119,6 @@ function ChayGiay(thoigianbatdau, thoigiandau, i) {
 
 function ChiTiet(msp) {
     $("main").empty();
-    // $('.anchodgct').empty();
     $.ajax({
         type: "GET",
         url: "/chitiet/" + msp,
@@ -123,10 +137,14 @@ function ChiTiet(msp) {
                 url: "/giadauhientai/" + msp,
                 success: (data) => {
                     var kq = data.kq;
-                    var dg = dg + kq.GiaHienTai;
-                    var thoigianbatdau = kq.ThoiGianBatDau;
-                    var thoigiandau = parseInt(kq.ThoiGianDau);
-                    ChayGiay(thoigianbatdau, thoigiandau, "c");
+                    if (kq.MaTinhTrangPhienDauGia == 1) {
+                        $('.tgclc').text("0");
+                    }
+                    if (kq.MaTinhTrangPhienDauGia != 1) {
+                        var thoigianbatdau = kq.ThoiGianBatDau;
+                        var thoigiandau = parseInt(kq.ThoiGianDau);
+                        ChayGiay(thoigianbatdau, thoigiandau, "c", kq.MaPhienDauGia);
+                    }
                     $(".giatien").text(kq.GiaHienTai + "k");
                     $(".giadat").val(kq.GiaHienTai);
                     $.ajax({
@@ -159,6 +177,10 @@ function ChiTiet(msp) {
 }
 
 function DauGia(msp) {
+    if (sessionStorage.DangNhap == null) {
+        alert("Hãy đăng nhập để thực hiện chức năng này");
+        return;
+    }
     $.ajax({
         type: "GET",
         url: "/giadauhientai/" + msp,
@@ -170,7 +192,7 @@ function DauGia(msp) {
             }
             var a = $('.giatien').text().split("k");
             var giadat = $('.giadat').val();
-            if (giadat <= a[0]) {
+            if (giadat <= parseInt(a[0])) {
                 alert("Vui lòng nhập giá lớn hơn giá hiện tại");
                 return;
             }

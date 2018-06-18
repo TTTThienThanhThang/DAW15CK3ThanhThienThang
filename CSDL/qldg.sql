@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 17/06/2018 22:20:10
+ Date: 18/06/2018 18:31:06
 */
 
 SET NAMES utf8mb4;
@@ -92,8 +92,8 @@ CREATE TABLE `phiendaugia`  (
 -- ----------------------------
 INSERT INTO `phiendaugia` VALUES (1, 1, '17/06/2018 13:32:00', 500, '1', 3400000, 3, 1);
 INSERT INTO `phiendaugia` VALUES (2, 2, '17/06/2018 13:20:30', 200, '1', 2700000, 5, 1);
-INSERT INTO `phiendaugia` VALUES (3, 3, '17/06/2018 14:25:30', 3660, '1', 630, 19, 2);
-INSERT INTO `phiendaugia` VALUES (4, 4, '17/06/2018 21:59:30', 3810, '1', 90, 18, 2);
+INSERT INTO `phiendaugia` VALUES (3, 3, '17/06/2018 14:25:30', 3730, '1', 650, 21, 1);
+INSERT INTO `phiendaugia` VALUES (4, 4, '17/06/2018 15:26:30', 86400, '1', 170, 20, 2);
 
 -- ----------------------------
 -- Table structure for phieudaugia
@@ -106,7 +106,7 @@ CREATE TABLE `phieudaugia`  (
   `GiaDau` bigint(255) NULL DEFAULT NULL,
   `MaTinhTrangPhieuDauGia` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`MaPhieuDauGia`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Fixed;
+) ENGINE = MyISAM AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Fixed;
 
 -- ----------------------------
 -- Records of phieudaugia
@@ -116,9 +116,11 @@ INSERT INTO `phieudaugia` VALUES (2, 1, 2, 2700000, 2);
 INSERT INTO `phieudaugia` VALUES (3, 1, 3, 3400000, 2);
 INSERT INTO `phieudaugia` VALUES (4, 2, 1, 2, 2);
 INSERT INTO `phieudaugia` VALUES (5, 2, 2, 2700000, 2);
-INSERT INTO `phieudaugia` VALUES (6, 3, 1, 560, 1);
-INSERT INTO `phieudaugia` VALUES (18, 4, 8, 90, 1);
-INSERT INTO `phieudaugia` VALUES (19, 3, 8, 630, 1);
+INSERT INTO `phieudaugia` VALUES (6, 3, 1, 560, 2);
+INSERT INTO `phieudaugia` VALUES (18, 4, 8, 160, 1);
+INSERT INTO `phieudaugia` VALUES (19, 3, 8, 640, 2);
+INSERT INTO `phieudaugia` VALUES (20, 4, 9, 170, 1);
+INSERT INTO `phieudaugia` VALUES (21, 3, 9, 650, 2);
 
 -- ----------------------------
 -- Table structure for sanpham
