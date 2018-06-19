@@ -12,6 +12,7 @@ const chitiet = require('./routes/chitiet')
 const doimatkhau = require('./routes/doimatkhau')
 const daugiacuatui = require('./routes/daugiacuatui')
 const thongtinuser = require('./routes/thongtinuser')
+const admin = require('./routes/admin');
 
 var app = express();
 
@@ -38,7 +39,7 @@ app.use('/chitiet', chitiet);
 app.use('/daugiacuatui', daugiacuatui);
 app.use('/doimatkhau', doimatkhau);
 app.use('/thongtinuser', thongtinuser);
-
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

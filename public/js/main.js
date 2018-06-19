@@ -14,9 +14,9 @@ function HienThiDauGiaCuaTui() {
         url: "/daugiacuatui/" + mataikhoan, //duong dan, coi trong app->routes
         success: (data) => {
             var result = data.kq;
+            var tc = 1; //dung de chay stt
+            var ddg = 1; //dung de chay stt
             for (let i = 0; i < result.length; i++) { //chay vong for voi ket qua tra ve
-                var tc = 1; //dung de chay stt
-                var ddg = 1; //dung de chay stt
                 var matinhtrangphiendaugia = result[i].MaTinhTrangPhienDauGia; //kiem tra tinh trang phien dau gia: 1 dau gia ket thuc,2 dang dau gia, 3 chua dau gia
                 var tensanpham = result[i].TenSanPham; //lay ten san pham
                 var gia = result[i].GiaDau; //lay gia dau hien tai
@@ -39,10 +39,10 @@ function HienThiDauGiaCuaTui() {
                     $('.ddg' + i).append(`<td>${gia}</td>`);
                     var giahientai = result[i].GiaHienTai;
                     $('.ddg' + i).append(`<td>${giahientai}</td>`);
-                    $('.ddg' + i).append(`<td class="tgcl0"></td>`);
+                    $('.ddg' + i).append(`<td class="tgcl${ddg}"></td>`);
                     var thoigianbatdau = result[i].ThoiGianBatDau;
                     var thoigiandau = parseInt(result[i].ThoiGianDau);
-                    ChayGiay(thoigianbatdau, thoigiandau, 0, result[i].MaPhienDauGia); //chay real time(thoi gian hien tai so voi thoi gian dau)//nam trong file index.js
+                    ChayGiay(thoigianbatdau, thoigiandau, ddg, result[i].MaPhienDauGia); //chay real time(thoi gian hien tai so voi thoi gian dau)//nam trong file index.js
                     ddg++;
                 }
             }
@@ -75,8 +75,20 @@ function HienThiDangKi() {
 function Thoat() {
     if (sessionStorage.DangNhap != null) {
         sessionStorage.removeItem("DangNhap");
-        window.location.href = '../';
     }
+    if (sessionStorage.ThamSo != null) {
+        sessionStorage.removeItem("ThamSo");
+    }
+    if (sessionStorage.Loai != null) {
+        sessionStorage.removeItem("Loai");
+    }
+    if (sessionStorage.SuaThamSo != null) {
+        sessionStorage.removeItem("SuaThamSo");
+    }
+    if (sessionStorage.SuaThoiGian != null) {
+        sessionStorage.removeItem("SuaThoiGian");
+    }
+    window.location.href = '../';
 }
 
 function Home() {

@@ -13,9 +13,24 @@ router.get('/:msp', (req, res) => {
             connection.release();
             if (err) console.log("loi");
             else {
-                res.send({
-                    'kq': result[0]
-                });
+                if (result.length == 0) {
+                    var sql2 = `select * from sanpham sp join loaisanpham lsp on sp.MaLoaiSanPham=lsp.MaLoaiSanPham where sp.MaSanPham = ${msp}`;
+                    connection.query(sql2, (err, result2) => {
+                        if (err) throw err;
+                        else {
+                            res.send({
+                                'cohinh': 0,
+                                'kq': result2[0]
+                            });
+                        }
+                    })
+                } else {
+                    res.send({
+                        'cohinh': 1,
+                        'kq': result[0]
+                    });
+                }
+
             }
         })
     })

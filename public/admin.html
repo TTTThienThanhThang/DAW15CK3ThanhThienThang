@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <button class="btn btn-danger" onclick="TrangChu();">
+            <span class=" glyphicon glyphicon-home"></span> Trang chủ</button>
+        <button class="btn btn-primary pull-right" onclick="Thoat()">
+            <span class="glyphicon glyphicon-share-alt"></span> Thoát</button>
+        <h2 class="middle">ADMIN</h2>
+        <button type="button" class="btn btn-info col-sm-2" onclick="TaiKhoan()">Tài khoản</button>
+        <button type="button" class="btn btn-danger col-sm-3" onclick="SanPham()">Sản phẩm</button>
+        <button type="button" class="btn btn-success col-sm-2" onclick="PhienDauGia()">Phiên đấu giá</button>
+        <button type="button" class="btn btn-warning col-sm-3" onclick="PhieuDauGia()">Phiếu đấu giá</button>
+        <button type="button" class="btn btn-primary col-sm-2" onclick="ThamSo()">Tham số</button>
+        <div class="dulieuhienthi"></div>
+        <div class="dulieuthemxoasua"></div>
+        <form class="form-horizontal" name="fThemSanPham" hidden>
+            <div class="form-group">
+                <label for="ipTenSanPham" class="col-sm-3 control-label">Tên sản phẩm</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ipTenSanPham" placeholder="tên sản phẩm"> </div>
+            </div>
+            <div class="form-group">
+                <label for="ipThoiGianDau" class="col-sm-3 control-label">Thời gian đấu</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ipThoiGianDau" name="ipThoiGianDau" value="3600">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ipGiaSanPham" class="col-sm-3 control-label">Giá sản phẩm</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ipGiaSanPham" name="ipGiaSanPham" value="1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtHinhDaiDien" class="col-sm-3 control-label">Hình đại diện</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="txtHinhDaiDien" name="txtHinhDaiDien">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="slLoaiSP" class="col-sm-3 control-label">Loại</label>
+                <div class="col-sm-9">
+                    <select class="form-control" name="slLoaiSP" id="slLoaiSP">
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Mota" class="col-sm-3 control-label">Mô tả:</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control " rows="5" id="Mota"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="button" class="btn btn-danger" onclick="ThemSanPham();">Thêm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    var currentLocation = window.location;
+    if (currentLocation == "http://localhost:3000/admin.html") {
+        window.location.href = "./";
+    }
+</script>

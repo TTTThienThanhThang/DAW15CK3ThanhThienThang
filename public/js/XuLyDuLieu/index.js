@@ -1,5 +1,9 @@
 $(document).ready(function () {
     $(window).on("load", function () {
+        var currentLocation = window.location;
+        if (currentLocation == "http://localhost:3000/index.html") {
+            window.location.href = "./";
+        }
         if (sessionStorage.DangNhap == null) {
             $('.dmk').hide();
             $('.ttcn').hide();
@@ -170,8 +174,12 @@ function ChiTiet(msp) {
             $('.ttsp').append(`<section class='section'><h4>Thông tin sản phẩm.</h4></section>`);
             $('.section').append(`<p>${kq.DacTa}</p>`);
             $('.section').append(`<p><strong>Loại</strong><br/>${kq.TenLoaiSanPham}</p>`);
-            $('.w2').append(`<img src="${kq.DuongDan}/1.jpg" />`);
-            $('.w2').append(`<img src="${kq.DuongDan}/2.jpg" />`);
+            var cohinh = data.cohinh;
+            if (cohinh == 1) {
+                $('.w2').append(`<img src="${kq.DuongDan}/1.jpg" />`);
+                $('.w2').append(`<img src="${kq.DuongDan}/2.jpg" />`);
+            }
+
         }
     })
 }
@@ -211,6 +219,9 @@ function DauGia(msp) {
                     var maphieudaugia = data.maphieudaugia;
                     const thamso = JSON.parse(sessionStorage.ThamSo);
                     var thamsocong = thamso[1].GiaTri * 1 + kq.ThoiGianDau * 1;
+                    if (thamsocong >= 86000) {
+                        thamsocong = 86000;
+                    }
                     $.ajax({
                         type: "POST",
                         url: "/themvaophiendaugia",

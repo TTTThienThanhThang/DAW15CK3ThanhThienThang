@@ -12,17 +12,34 @@ router.post('/', (req, res) => {
     conn.getConnection((err, connection) => {
         if (err)
             throw err;
-        var sql = `INSERT INTO taikhoan(TenDangNhap,MatKhau,TenHienThi,DiaChi,MaLoaiTaiKhoan) VALUES('${user}','${pass}','${hoten}','${diachi}',1)`;
-        connection.query(sql, (err, result) => {
-            connection.release();
-            if (err) res.send({
-                'kq': 'Dang ki that bai'
-            });
-            res.send({
-                'kq': 'Dang ki thanh cong'
+        else {
+            var sql = `select TenDangNhap from taikhoan where TenDangNhap = '${user}'`;
+            connection.query(sql, (err, result) => {
+                connection.release();
+                if (err) throw err;
+                else {
+                    if (result.length != 0) {
+                        res.send({
+                            'kq': 0
+                        })
+                    } else {
+                        var sql = `INSERT INTO taikhoan(TenDangNhap,MatKhau,TenHienThi,DiaChi,MaLoaiTaiKhoan) VALUES('${user}','${pass}','${hoten}','${diachi}',1)`;
+                        connection.query(sql, (err, result) => {
+                            if (err) {
+                                res.send({
+                                    'kq': 0
+                                });
+                            } else {
+                                res.send({
+                                    'kq': 1
+                                })
+                            }
+                        })
+                    }
+                }
             })
+        }
 
-        })
     })
 })
 module.exports = router;

@@ -26,8 +26,13 @@ function DangKi() {
             diachi: diachi
         },
         success: (data) => {
-            alert(data.kq);
-            window.location.href = '../../'; //về trang chủ
+            if (data.kq == 0) {
+                alert("Tài khoản đã tồn tại");
+            } else {
+                alert("Đăng kí thành công");
+                window.location.href = '../../'; //về trang chủ
+            }
+
         }
     })
 }
